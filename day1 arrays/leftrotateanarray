@@ -21,3 +21,33 @@ public class Main {
 }
 -----------------output--------------------------------
 2 3 4 5 1
+
+
+
+
+//another solution which is O(N) Time complexity
+
+package ArraysPractice;
+
+
+
+public class Main {
+
+    public static void rotatebyleft1(int[] arr) {
+        int temp = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            arr[i - 1] = arr[i];
+        }
+        arr[arr.length - 1] = temp;
+    }
+
+    public static void main(String[] args) {
+      int nums[]={1,2,3,4,5};//output is 23451
+    rotatebyleft1(nums);
+for(int num:nums){
+    System.out.print(num);
+}
+    }
+}
+--------------------output------------------
+23451
