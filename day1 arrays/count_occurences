@@ -1,0 +1,17 @@
+package Arraypractice.com;
+
+public class CountOccurences {
+    public static void main(String[] args) {
+        int arr[]={1,2,3,1,1,1,4};
+        int count_occurences=0;
+        int target=1;
+        for (int i:arr){
+            if(i==target){
+                count_occurences++;
+            }
+        }
+        System.out.println(count_occurences);
+    }
+}
+---------output----------
+  4
