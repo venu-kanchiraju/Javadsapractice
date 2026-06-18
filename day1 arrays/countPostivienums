@@ -1,0 +1,16 @@
+package Arraypractice.com;
+
+public class CountPositiveNum {
+    public static void main(String[] args) {
+        int arr[]={1,2,3,4,5,-1,-2};
+        int count_positive=0;
+        for (int i:arr){
+            if(i>0){
+                count_positive++;
+            }
+        }
+        System.out.println("The positive numbers are: "+count_positive);
+    }
+}
+-----output------
+  The positive numbers are: 5
