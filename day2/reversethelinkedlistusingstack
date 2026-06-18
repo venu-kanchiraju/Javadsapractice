@@ -1,0 +1,57 @@
+package linkedlistpractice.com;
+
+import java.util.Stack;
+import java.util.jar.JarEntry;
+
+//reverse the singlelinkedlist using stack
+public class Node11 {
+    int data;
+    Node11 next;
+    public Node11(int data,Node11 next){
+        this.data=data;
+        this.next=next;
+    }
+    public Node11(int data){
+        this.data=data;
+        this.next=null;
+    }
+    public static Node11 convert2LL(int arr[]){
+        Node11 head=new Node11(arr[0]);
+        Node11 prev=head;
+        for (int i=1;i<arr.length;i++){
+            Node11 temp=new Node11(arr[i]);
+            prev.next=temp;
+            prev=temp;
+        }
+        return head;
+    }
+    public static void printll(Node11 head){
+        while (head!=null){
+            System.out.print(head.data+"->");
+            head=head.next;
+        }
+    }
+    public static Node11 reverseLinkedlist(Node11 head){
+        Stack<Integer>set=new Stack<>();
+        Node11 temp=head;
+        while (temp!=null){
+            set.push(temp.data);
+            temp=temp.next;
+        }
+        temp=head;
+        while (temp!=null){
+            temp.data=set.pop();
+            temp=temp.next;
+        }
+        return head;
+    }
+
+    public static void main(String[] args) {
+        int arr[]={1,2,3,4,5};
+        Node11 head=convert2LL(arr);
+        head=reverseLinkedlist(head);
+        printll(head);
+    }
+}
+-----------output----------------
+5->4->3->2->1->
