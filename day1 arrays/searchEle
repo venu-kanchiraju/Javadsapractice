@@ -1,0 +1,21 @@
+package Arraypractice.com;
+
+public class SearchAnELe {
+    public static boolean searchEle(int target,int arr[]) {
+        for (int i : arr) {
+            if (i == target) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+            int arr[]={1,2,3,4};
+            int target=3;
+            boolean isresult=searchEle(target,arr);
+            System.out.println(isresult);
+    }
+
+}
+----output-----------
+true
