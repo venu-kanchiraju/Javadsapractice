@@ -1,0 +1,16 @@
+package Arraypractice.com;
+
+public class SumofOdd {
+    public static void main(String[] args) {
+        int arr[]={1,2,3,4,5};
+        int sum=0;
+        for (int i:arr){
+            if(i%2==1){
+                sum+=i;
+            }
+        }
+        System.out.println("The sum of odd numbers is: "+sum);
+    }
+}
+-------output-------
+The sum of odd numbers is: 9
