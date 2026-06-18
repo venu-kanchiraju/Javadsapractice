@@ -1,0 +1,53 @@
+package linkedlistpractice.com;
+//deleteTail of the doublelinked list
+public class Node8 {
+    int data;
+    Node8 next;
+    Node8 back;
+    public Node8(int data,Node8 next,Node8 back){
+        this.data=data;
+        this.next=next;
+        this.back=back;
+    }
+    public Node8(int data){
+        this.data=data;
+        this.next=null;
+        this.back=null;
+    }
+
+    public static Node8 convert2DLL(int arr[]){
+      Node8 head=new Node8(arr[0]);
+      Node8 prev=head;
+      for (int i=1;i<arr.length;i++){
+          Node8 temp=new Node8(arr[i],null,prev);
+          prev.next=temp;
+          prev=temp;
+      }
+      return head;
+    }
+    public static void printll(Node8 head){
+        while (head!=null){
+            System.out.print(head.data+"->");
+            head=head.next;
+        }
+    }
+    public static Node8 deleteTail(Node8 head){
+       Node8 current=head;
+       while (current.next.next!=null){
+           current=current.next;
+       }
+       Node8 newTail=current.next;
+       current.next=null;
+       newTail.back=null;
+       return head;
+    }
+
+    public static void main(String[] args) {
+        int arr[]={1,2,3,4,5};
+        Node8 head=convert2DLL(arr);
+       head= deleteTail(head);
+      printll(head);
+    }
+}
+--------output--------
+  1->2->3->4
