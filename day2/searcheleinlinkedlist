@@ -1,0 +1,37 @@
+package linkedlistpractice.com;
+//search an element in linkedlist,if an element is found return 1,other wise return 0
+public class Node6 {
+    Node6 next;
+    int data;
+    public Node6(Node6 next,int data){
+        this.next=next;
+        this.data=data;
+    }
+    public Node6(int data){
+        this.data=data;
+        this.next=null;
+    }
+public static int findEle(Node6 head,int ele){
+        Node6 temp=head;
+        while (temp!=null){
+            if(temp.data==ele){
+                return 1;
+            }
+            temp=temp.next;
+        }
+        return 0;
+}
+    public static void main(String[] args) {
+        int arr[]={1,2,3,4,5};
+        int ele=4;
+        Node6 head=new Node6(arr[0]);
+        head.next=new Node6(arr[1]);
+        head.next.next=new Node6(arr[2]);
+        head.next.next.next=new Node6(arr[3]);
+        head.next.next.next.next=new Node6(arr[4]);
+        System.out.println(findEle(head,ele));
+
+    }
+}
+--------------output------------------
+1
