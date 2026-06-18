@@ -1,0 +1,35 @@
+package linkedlistpractice.com;
+//find the length of the linkedlist
+public class Node5 {
+    int data;
+    Node5 next;
+    public Node5(int data,Node5 next){
+        this.data=data;
+        this.next=next;
+    }
+    public Node5(int data){
+        this.data=data;
+        this.next=null;
+    }
+    public static int lengthOfLinkedList(Node5 head){
+        int count=0;
+        Node5 temp=head;
+        while (temp!=null){
+            count++;
+            temp=temp.next;
+        }
+        return count;
+    }
+
+    public static void main(String[] args) {
+        int arr[]={1,2,3,4,5};
+        Node5 head=new Node5(arr[0]);
+        head.next=new Node5(arr[1]);
+        head.next.next=new Node5(arr[2]);
+        head.next.next.next=new Node5(arr[3]);
+        head.next.next.next.next=new Node5(arr[4]);
+        System.out.println(lengthOfLinkedList(head));
+    }
+}
+----------------output------------------
+5
