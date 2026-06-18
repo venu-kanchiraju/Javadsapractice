@@ -1,0 +1,16 @@
+package Arraypractice.com;
+
+public class LargestOddNumber {
+    public static void main(String[] args) {
+        int arr[]={1,11,4,5,8,9};
+        int largeOdd=arr[0];
+        for(int i:arr){
+            if(i%2==1 && i>largeOdd){
+                largeOdd=i;
+            }
+        }
+        System.out.println("The largest odd number is: "+largeOdd);
+    }
+}
+---output------
+The largest odd number is: 11
